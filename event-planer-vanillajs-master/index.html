@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Календарь</title>
+        <meta name="description" content="Календарь для планирования событий, написанный на Vanilla JS">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+           <script>
+              document.createElement('header');
+              document.createElement('nav');
+              document.createElement('section');
+              document.createElement('article');
+              document.createElement('aside');
+              document.createElement('footer');
+           </script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="wrap wrap-global">
+            <header class="header">
+                <div class="wrap wrap-inner">
+                    <div class="toolbar">
+                        <button id="task-add" class="btn btn-default">Добавить</button>
+                        <button id="help-btn" class="btn btn-default">?</button>
+
+                        <div class="search">
+                           <!--  <div id='clear-search' class="close-search">&#10006;</div> -->
+                            <input id="task-search" class="input" type="text" name="search-query" placeholder="Поиск события">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class='wrap wrap-calendar'>
+                <div class="navigation-month">
+                    <button id='show-prev-month' class='btn btn-arrow'>&#9666;</button>
+                    <span id="current-date" class="current-date">Сегодня</span>
+                    <button id='show-next-month' class='btn btn-arrow'>&#9656;</button>
+
+                    <button id="show-today" class='btn btn-show-today active'>Сегодня</button>
+                </div>
+
+                <div id='event-calendar' class="event-calendar">
+                    <!-- 
+                    EXAMPLE
+                    <table class='table'>
+                        <tr>
+                            <td class="calendar-day">1</td>
+                            <td class="calendar-day">2</td>
+                            <td class="calendar-day">3</td>
+                        </tr>
+                    </table> -->
+                </div>
+            </div>
+        </div>
+
+    <div class="tooltips">
+        <!-- tooltip -->
+        <form id="advance-add-event" class='tooltip add-event-tooltip triangle hidden'>
+            <div class="close-tooltip">&#10006;</div>
+            <div class="tooltip-body">
+                <div class='form-element'>
+                    <input type='text' class="input" name='eventName' placeholder='Событие' autocomplete='off'>
+                </div>
+                <div class='form-element'>
+                    <input type='text' class="input" name='date' data-date='' placeholder='День, месяц, год' value='' autocomplete='off' disabled>
+                </div>
+                <div class='form-element'>
+                    <input type='text' class="input" name='members' placeholder='Имена участников' autocomplete='off'>
+                </div>
+
+                <div class='form-element'>
+                    <textarea class='textarea' name='descr' placeholder='Описание'></textarea>
+                </div>
+
+                <div class='form-element'>
+                    <button class='btn btn-default btn-add'>Готово</button>
+                    <button class='btn btn-default btn-delete'>Удалить</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- tooltip -->
+        <form id="short-add-event" class='tooltip add-event-tooltip triangle triangle-top hidden'>
+            <div class="close-tooltip">&#10006;</div>
+            <div class="tooltip-body">
+                <div class='form-element'>
+                    <input type='text' class="input" name='shortEvent' placeholder='5 марта, День рождение' autocomplete="off">
+                </div>
+                <div><p>Дата: <span id='shortEventParseDate'>—</p></div>
+                <div><p>Cобытие: <span id='shortEventParseEvent'>—</p></div>
+                <div class='form-element'>
+                    <button class='btn btn-default btn-add'>Готово</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- tooltip -->
+        <div id="search-tooltip" class='tooltip search-tooltip triangle triangle-top hidden'>
+           <ul class='search-list'>
+            <!-- 
+            EXAMPLE
+            <li class='event'>
+                <p class='event-name'>{eventName}</p>
+                <span class='event-date'>{date}</span>
+            </li> -->
+           </ul>
+        </div>
+
+        <!-- tooltip -->
+        <div id="help-tooltip" class='tooltip help-tooltip triangle triangle-top hidden'>
+            <div class="close-tooltip">&#10006;</div>
+            <div class="text">
+                <p>Приложение написано без использования сторонних библиотек, на чистом JS/HTML/CSS. Тестовое задание для frontend разработчиков описано здесь: <a href="https://github.com/hhru/frontend-test">https://github.com/hhru/frontend-test</a></p>
+                <p>14/12/2014</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- scripts -->
+        <script src="js/utility.js"></script>
+
+        <script src="js/calendar/widgets/Tooltip.js"></script>
+        <script src="js/calendar/widgets/CreateEventShortTooltip.js"></script>
+        <script src="js/calendar/widgets/CreateEventTooltip.js"></script>
+        <script src="js/calendar/widgets/SearchTooltip.js"></script>
+        <script src="js/calendar/widgets/Calendar.js"></script>
+
+        <script src="js/calendar/model.js"></script>
+        <script src="js/calendar/view.js"></script>
+        <script src="js/calendar/controller.js"></script>
+        <script src="js/application.js"></script>
+    </body>
+</html>

@@ -1,0 +1,486 @@
+/* ==========================================================================
+    Base styles
+    ========================================================================== */
+
+html {
+     font-size: 1em;
+     line-height: 1.4;
+}
+
+body {
+     margin: 0;
+}
+
+header, nav, section, article, aside, footer {
+    display:block;
+}
+
+::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.wrap {
+     margin: 0 auto;
+}
+
+a:link {
+    color: #008ACE;
+}
+
+a:hover{
+    color:#CC0000
+}
+
+a:visited{
+    color:#B40EB4
+}
+
+a:visited:hover{
+    color:#CC0000
+}
+
+a:focus{
+    outline:none
+}
+
+.btn {
+    display: inline-block;
+    height: 25px;
+
+    padding: 0px;
+
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 0.75em;
+
+    outline: none;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+
+    background: #ffffff;
+}
+
+.btn:active {
+
+}
+
+.btn-default {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background-color: #0271c7;
+    color: #ffffff;
+    border-radius: 2px;
+
+    box-shadow: 0 1px 1px #c6c6c6;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-default:active {
+	background-color: #015da4;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.input, .textarea {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    border: none;
+}
+
+.textarea {
+    padding-top: 5px;
+    text-indent: 5px;
+    font-family: Arial;
+    font-size: 0.9em;
+}
+
+.input {
+    width: 195px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==========================================================================
+    Main styles
+    ========================================================================== */
+
+.wrap-global {
+     width: 100%;
+     padding-bottom: 15px;
+}
+
+.wrap-inner {
+     width: 900px;
+}
+
+.wrap-global .header {
+     height: 65px;
+     background: #f4f4f4;
+     box-shadow: 0px 0px 5px #888888;
+     position: relative;
+}
+
+.wrap-global .header .toolbar {
+    position: absolute;
+    width: inherit;
+    bottom: 20px;
+}
+
+.wrap-global .toolbar .btn {
+    margin-right: 8px;
+}
+
+.wrap-global .toolbar .search {
+    float: right;
+    position: relative;
+}
+
+.wrap-global .toolbar .search .close-search {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: #5f5f5f;
+    font-weight: normal;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+.wrap-global .search .input {
+    width: 200px;
+    height: 25px;
+    text-indent: 5px;
+}
+
+/* ==========================================================================
+    Calendar styles
+    ========================================================================== */
+
+.wrap-calendar {
+     width: 900px;
+     margin-top: 15px;
+}
+
+.wrap-calendar .navigation-month .btn {
+    color: #666666;
+    box-shadow: inset  0px 0px 2px #888888;
+    font-weight: normal;
+    border-radius: 3px;
+}
+
+.wrap-calendar .navigation-month .btn-arrow {
+    width: 17px;
+    height: 17px;
+}
+.wrap-calendar .navigation-month .btn-show-today {
+    box-shadow: 0px 0px 2px #888888;
+    padding: 0 10px;
+    height: 17px;
+    margin-left: 5px;
+    font-size: 0.7em;
+}
+
+.wrap-calendar .navigation-month .btn-show-today.active {
+    box-shadow: inset 0px 0px 2px #888888;
+}
+
+.wrap-calendar .navigation-month .current-date {
+    font-family: Arial;
+    font-size: 0.95em;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.event-calendar {
+    margin-top: 15px;
+}
+
+.event-calendar .table {
+    border-collapse: collapse;
+    display: block;
+}
+
+.event-calendar .calendar-day {
+    border: 1px solid #D1D1D1;
+    width: 127px;
+    height: 107px;
+    padding-top: 8px;
+    vertical-align: top;
+    color: #9f9f9f;
+    font-family: Arial;
+    font-size: 0.7em;
+    text-indent: 8px;
+}
+
+.event-calendar .calendar-day.active,
+.event-calendar .calendar-day.active:hover {
+    box-shadow: inset 0px 0px 0px 1px #86c9fd;
+    background: #e5f1f9;
+}
+
+.event-calendar .calendar-day:hover {
+    background: #F4F4F4;
+    cursor: pointer;
+}
+
+.event-calendar .calendar-day.today {
+    font-weight: bold;
+    background: #E4E2FF;
+}
+
+.event-calendar .calendar-day .day {
+    padding-bottom: 4px;
+    margin: 0px;
+}
+
+.event-calendar .calendar-day.has-event {
+    background: #E9F5FF;
+}
+
+.event-calendar .calendar-day .event-name,
+.event-calendar .calendar-day .event-members {
+    width: 127px;
+    margin: 0px;
+    color: #5f5f5f;
+    font-size: 1em;
+    text-indent: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    box-sizing: border-box;
+    word-break: break-all;
+}
+
+.event-calendar .calendar-day .event-name {
+    font-weight: bold;
+}
+
+/* ==========================================================================
+    Tooltips styles
+    ========================================================================== */
+
+.tooltips .tooltip {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    width: 300px;
+    border-radius: 2px;
+    background: white;
+}
+
+.tooltips .tooltip .tooltip-body {
+    padding: 25px 20px;
+}
+
+.tooltips .add-event-tooltip .tooltip-body p  {
+    font-family: Arial;
+    margin: 10px 0px;
+    font-size: 12px;
+}
+
+.tooltips .add-event-tooltip .input,
+.tooltips .add-event-tooltip .textarea {
+    width: 100%;
+}
+
+.tooltips .add-event-tooltip .textarea {
+    height: 120px;
+}
+
+.tooltips .tooltip {
+    position: relative;
+}
+
+.tooltips .tooltip .text {
+    font-family: Arial;
+    font-size: 0.8em;
+    padding: 0 15px;
+    color: #111;
+}
+
+.tooltips .tooltip .close-tooltip {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #5f5f5f;
+    font-weight: normal;
+    font-size: 0.5em;
+    cursor: pointer;
+}
+
+/* add event tooltip */
+.add-event-tooltip .form-element {
+    margin-bottom: 10px;
+}
+
+.add-event-tooltip .form-element:last-child {
+    margin-bottom: 0px;
+}
+
+/* help tooltip */
+.tooltips .tooltip.help-tooltip {
+    width: 400px;
+}
+
+.tooltips .search-tooltip {
+    width: 210px;
+    padding: 5px;
+}
+
+.tooltips .search-tooltip .search-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.tooltips .search-tooltip .search-list .event {
+    padding: 4px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #EBEBEB;
+    font-family: Arial;
+}
+
+.tooltips .search-tooltip .search-list .event:last-child {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+.tooltips .search-tooltip .search-list .event:hover {
+    background: #27A1FF;
+    color: white;
+    cursor: pointer;
+}
+
+.tooltips .search-tooltip .search-list .event-name {
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 0.8em;
+}
+
+.tooltips .search-tooltip .search-list .event-date {
+    font-size: 0.7em;
+    line-height: 0.7em;
+}
+
+/* ==========================================================================
+    Tooltip arrows
+    ========================================================================== */
+
+.triangle {
+    position: relative;
+}
+
+/* left */
+
+.triangle.triangle-left:after, .triangle.triangle-left:before {
+    right: 100%;
+    top: 55px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.triangle.triangle-left:after {
+    border-color: rgba(242, 255, 240, 0);
+    border-right-color: #ffffff;
+    border-width: 8px;
+    margin-top: -8px;
+}
+.triangle.triangle-left:before {
+    border-color: rgba(174, 174, 174, 0);
+    border-right-color: #AEAEAE;
+    border-width: 9px;
+    margin-top: -9px;
+}
+
+/* top */
+
+.triangle.triangle-top:after, .triangle.triangle-top:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.triangle.triangle-top:after {
+    border-color: rgba(242, 255, 240, 0);
+    border-bottom-color: #ffffff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.triangle.triangle-top:before {
+    border-color: rgba(174, 174, 174, 0);
+    border-bottom-color: #AEAEAE;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+/* bottom */
+
+.triangle.triangle-bottom:after, .triangle.triangle-bottom:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.triangle.triangle-bottom:after {
+    border-color: rgba(242, 255, 240, 0);
+    border-top-color: #ffffff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.triangle.triangle-bottom:before {
+    border-color: rgba(174, 174, 174, 0);
+    border-top-color: #AEAEAE;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+/* right */
+
+.triangle.triangle-right:after, .triangle.triangle-right:before {
+    left: 100%;
+    top: 55px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.triangle.triangle-right:after {
+    border-color: rgba(242, 255, 240, 0);
+    border-left-color: #ffffff;
+    border-width: 8px;
+    margin-top: -8px;
+}
+.triangle.triangle-right:before {
+    border-color: rgba(174, 174, 174, 0);
+    border-left-color: #AEAEAE;
+    border-width: 9px;
+    margin-top: -9px;
+}
